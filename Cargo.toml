@@ -1,0 +1,28 @@
+[package]
+name = "signal-doh-ech"
+version = "0.1.0"
+authors = ["user"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.33"
+env_logger = "0.8.1"
+structopt = "0.3.20"
+log = "0.4.11"
+
+tokio = { version = "0.2", features = ["macros", "sync"] }
+warp = "0.2"
+serde = {version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+futures = { version = "0.3", default-features = false, features=["std", "async-await"] }
+doh-dns = "0.2"
+#tungstenite = { version = "0.11", default-features = false }
+rustls = "0.18.1"
+webpki = "0.21.3"
+webpki-roots = "0.20.0"
+tokio-rustls = "0.14"
+http = "0.2.1"
+async-tungstenite = { version = "0.9.3", features=["tokio-runtime"] }
+nom = "5.1.2"
