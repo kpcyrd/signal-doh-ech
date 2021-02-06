@@ -51,7 +51,7 @@ async fn handle(args: Arc<Backend>, mut ws: WebSocket) -> Result<()> {
                     Some(Ok(msg)) => {
                         if msg.is_binary() {
                             trace!("Send: {:?}", msg);
-                            remote.write(msg.as_bytes()).await?;
+                            remote.write_all(msg.as_bytes()).await?;
                         }
                     },
                     Some(Err(err)) => {
